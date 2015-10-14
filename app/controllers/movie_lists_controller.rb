@@ -1,5 +1,5 @@
 class MovieListsController < ApplicationController
-	before_action :set_movie_list, only: [:show, :edit, :update, :destroy]
+	before_action :set_movie_list, only: [:show]
 
 
 	def index

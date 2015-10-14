@@ -26,7 +26,7 @@
 				<% movie_sublist.each do |movie_list| %>
 					<div class="col-sm-3">
 						<img src="<%= movie_list.thumbnail %>" class="movie_img"><br/>
-						<span class="movie_title"><%= link_to movie_list.query, movie_list_path(movie_list) %></span>
+						<span class="movie_title"><%= link_to "#{movie_list.query.titleize} Movies", movie_list_path(movie_list) %></span>
 					</div>
 				<% end %>
 			</div><br/>

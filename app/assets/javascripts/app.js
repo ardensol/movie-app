@@ -45,8 +45,8 @@ $(document).ready(function(){
 	//Repetitive error handling in case it exists out of initial API Call or subsequent Rails API Calls
 	function errorHandling(error) {
 		console.log(error);
-		alert(errorHandling.statusText); 
-		$(this).removeProp("disabled");
+		alert(error.statusText); 
+		$('#movie_search').removeProp("disabled");
 		$('#movie_title').removeProp("disabled");
 		$('#movie_title').removeClass("loading-indicator");
 	};

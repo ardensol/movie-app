@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-	before_action :set_movie, only: [:show, :edit, :update, :destroy]
+	before_action :set_movie, only: [:show]
 
 	def index
 	end
@@ -8,8 +8,6 @@ class MoviesController < ApplicationController
 		@reviews = @movie.reviews
 		@review = Review.new
 	end
-
-
 
 	private
 

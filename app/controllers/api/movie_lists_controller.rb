@@ -9,6 +9,7 @@ class Api::MovieListsController < ApplicationController
     movie_list.query = params['query']
 
     parsed_movies = params['movies']
+    
     parsed_movies.each do |movie_hash|
       
       movie_hash = movie_hash[1]
@@ -16,7 +17,7 @@ class Api::MovieListsController < ApplicationController
       if Movie.find_by_url(movie_hash['url'])
         
         # add to movie list collection, avoiding duplication for application
-        movie_list.movies << Movie.find_by_title(movie_hash['url'])
+        movie_list.movies << Movie.find_by_url(movie_hash['url'])
 
       else
         
