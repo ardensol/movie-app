@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   
-  root 'movies#index'
+  root 'movie_lists#index'
 
   namespace 'api', defaults: {format: 'json'} do
-    resources :movies, only: [:create]
+    resources :movie_lists, only: [:create]
   end
+
+
+  resources :movie_lists
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

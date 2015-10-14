@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014001553) do
+ActiveRecord::Schema.define(version: 20151014002737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "movie_lists", force: :cascade do |t|
+    t.string   "query"
+    t.string   "thumbnail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "movie_lists_movies", id: false, force: :cascade do |t|
+    t.integer "movie_id"
+    t.integer "movie_list_id"
+  end
+
+  add_index "movie_lists_movies", ["movie_id"], name: "index_movie_lists_movies_on_movie_id", using: :btree
+  add_index "movie_lists_movies", ["movie_list_id"], name: "index_movie_lists_movies_on_movie_list_id", using: :btree
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
