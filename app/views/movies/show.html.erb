@@ -1,0 +1,11 @@
+
+<% @movie.title %>
+<img src="<%= @movie.thumbnail %>">
+
+<% @reviews.each do |review| %>
+	<%= review.comment %>
+	<%= review.created_at %>
+<% end %>
+
+
+<%= render 'reviews/form' %>

@@ -5,6 +5,8 @@ class MoviesController < ApplicationController
 	end
 
 	def show 
+		@reviews = @movie.reviews
+		@review = Review.new
 	end
 
 

@@ -1,0 +1,10 @@
+
+<%= form_for [@movie, @review] do |f| %>
+	<p>Email</p>
+	<%= f.text_field :user_email %><br/>
+	<p>Rating</p>
+	<%= f.text_field :rating %><br/>
+	<p>Comments</p>
+	<%= f.text_area :comment, rows: 6, :class => "commenttextarea" %><br/>
+	<%= f.submit "Submit", class: "button hero-button", style: "margin-top: 80px;" %>
+<% end %>

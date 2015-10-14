@@ -1,6 +1,7 @@
 class Movie < ActiveRecord::Base
 
 	has_and_belongs_to_many :movie_lists
+	has_many :reviews
 
 	def find_additional_info(movie_title)
 		#initialize API Call to Mashape

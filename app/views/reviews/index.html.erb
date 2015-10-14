@@ -1,0 +1,7 @@
+Reviews
+
+<% @reviews.each do |review| %>
+	<%= review.movie.title %>
+	<%= review.rating %>
+	<%= review.user_email %>
+<% end %>

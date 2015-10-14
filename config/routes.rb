@@ -9,6 +9,12 @@ Rails.application.routes.draw do
 
   resources :movie_lists
 
+  resources :reviews, only: [:index]
+
+  resources :movies, only: [:show] do
+    resources :reviews, only: [:index, :create]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

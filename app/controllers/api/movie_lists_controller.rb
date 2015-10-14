@@ -15,11 +15,11 @@ class Api::MovieListsController < ApplicationController
       
       if Movie.find_by_title(movie_hash['name'])
         
-        # add to movie list collection
+        # add to movie list collection, avoiding duplication for application
         movie_list.movies << Movie.find_by_title(movie_hash['name'])
 
       else
-        #create new movie instance and save data if the movie does not yet exist, avoiding duplication for application
+        #create new movie instance and save data if the movie does not yet exist
         movie = Movie.new
         movie.title = movie_hash['name']
         movie.release_date = movie_hash['rlsdate']
@@ -38,7 +38,7 @@ class Api::MovieListsController < ApplicationController
 
     movie_list.save
 
-    redirect_to movie_list
+    render js: "window.location = '#{movie_list_path(movie_list)}'"
 
   end
 end
