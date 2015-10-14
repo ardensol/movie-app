@@ -1,11 +1,40 @@
-
-<% @movie.title %>
-<img src="<%= @movie.thumbnail %>">
-
-<% @reviews.each do |review| %>
-	<%= review.comment %>
-	<%= review.created_at %>
-<% end %>
+<div class='header-bg movie-show'>
+	<h1><%= @movie.title %></h2>
+</div>
 
 
-<%= render 'reviews/form' %>
+<div class='show-background'>
+	<div class="container-fluid">
+		<br/>
+		<div class= "row">
+			<div class='col-md-4'>
+				<img src="<%= @movie.thumbnail %>" class="movie-show-thumbnail">
+				<br/>
+				<br/>
+				<div class='info-box'>
+					<p>Genre: <%= @movie.genre %></p>
+					<p>Director: <%= @movie.director %></p>
+					<p>Cast: <%= @movie.cast %></p>
+					<p>Release Date: <%= @movie.release_date %></p>
+				</div>
+			</div>
+			<div class='col-md-8 review-section' >
+				<h2>Reviews</h2>
+				<div class='reviews'>
+					<% @reviews.each do |review| %>
+						<div class="review-comments">
+							
+							<p><%= review.comment %></p>
+
+							<span><%= review.created_at.strftime('%x') %> - <%= review.user_email %> - <%= review.rating %> Stars</span>
+						</div>
+					<% end %>
+				</div>
+
+				<div class='review-form'>
+					<%= render 'reviews/form' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

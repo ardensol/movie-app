@@ -1,9 +1,30 @@
-Show
+<div class='header-bg show-page'>
+	<center>
+		<h1>Select a Movie or Take a Look At <br/>Reviews & More!</h1>
+	</center>
+</div>
 
-<% @movies.each do |movie| %>
-	
-	<%= link_to movie.title, movie_path(movie) %>
-	<%= movie.genre %>
-	<img src="<%= movie.thumbnail %>">
-
-<% end %>
+<center class="sorting-tabs">
+	<tr>
+	  <th><%= sortable "title" %></th>
+	  <th><%= sortable "genre" %></th>
+	  <th><%= sortable "release_date", "Release Date" %></th>
+	</tr>
+	<br/>
+</center>
+<div class="grey-background">
+	<div class="container-fluid main-content">
+		<div class='box'>
+			<% @movies.each_slice(4) do |movie_sublist| %>
+				<div class='row'>
+					<% movie_sublist.each do |movie| %>
+						<div class="col-sm-3">
+							<img src="<%= movie.thumbnail %>" class="movie_img"><br/>
+							<%= link_to movie.title, movie_path(movie) %>
+						</div>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

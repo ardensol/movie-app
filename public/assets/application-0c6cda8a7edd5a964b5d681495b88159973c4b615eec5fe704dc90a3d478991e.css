@@ -1,0 +1,204 @@
+/* Other */
+
+.alert-error {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+
+.alert-notice {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+/* home page */
+
+.header-bg {
+	height: 240px;
+	background-repeat: no-repeat;
+	background-image: url('/images/home-background.jpg');
+}
+
+.header-bg h1 {
+	color: white;
+}
+
+.header-bg h2 {
+	color: white;
+}
+
+.header-bg p {
+	color: white;
+	font-size: 18px;
+}
+
+.header-bg a {
+	color: white;
+	text-decoration: underline;
+	font-size: 20px
+}
+
+.grey-background {
+	background-color: #f9f9f6;
+	padding-top: 30px;
+}
+
+.grey-background h2 {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.main-content {
+	width: 75%;
+}
+
+.main-content .box {
+	background-color: white;
+	border-radius: 5px;
+	padding: 30px;
+	border: 1px solid #ebebeb;
+	margin-bottom: 30px;
+}
+
+.movie_title {
+	color: #000;
+	font-size: 18px;
+}
+
+.movie_img {
+	width: 70%;
+}
+
+/* Movie List Show Page */
+.show-page {
+	height: 180px;
+}
+
+.show-page h1 {
+	padding-top: 40px;
+}
+
+.sorting-tabs {
+	min-height: 50px;
+	border-bottom: 1px solid #e5e5e5;
+	background: rgba(255,255,255,0.6);
+}
+
+.sorting-tabs a {
+	padding-right: 15px;
+	display: inline-block;
+	font-size: 23px;
+	margin: 0 20px 0 0;
+	margin-top: 5px;
+
+}
+
+/* Move Show Page */
+
+.movie-show {
+	height: 110px;
+}
+
+.movie-show h1 {
+	padding: 20px 15px;
+}
+
+.show-background {
+	background-color: #f9f9f6;
+	padding-bottom: 120px;	
+}
+
+.info-box {
+	background-color: white;
+	border-radius: 5px;
+	padding: 30px;
+	border: 1px solid #ebebeb;
+}
+
+.movie-show-thumbnail {
+	width: 60%;
+}
+
+.review-section {
+	padding-left: 50px;
+	border-left: 1px solid #F1F1F1;
+}
+
+.reviews {
+	background-color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 30px;
+	padding-bottom: 40px;
+	border-radius: 5px;
+	border: 1px solid #ebebeb;
+}
+
+.review-comments{
+	border-top: 1px solid #F1F1F1;
+	padding-bottom: 20px;
+	padding-top: 5px;
+}
+
+.review-form {
+	background-color: white;
+	margin-top: 25px;
+	padding-left: 25px;
+	border-radius: 5px;
+	border: 1px solid #ebebeb;
+	padding-bottom: 20px;
+}
+
+.control-group input {
+	width: 60%;
+	border-radius: 5px;
+	border: 1px solid #ebebeb;
+	line-height: 25px;
+}
+
+.control-group textarea {
+	width: 60%;
+	border-radius: 5px;
+	border: 1px solid #ebebeb;	
+}
+
+/* Review Index */
+
+.review-index {
+	margin-top: 30px;
+}
+
+.review-row {
+	border-bottom: 1px solid #ebebeb;
+	padding-top: 15px;
+	padding-left: 25px;
+	padding-bottom: 10px;
+}
+
+.footer-section {
+	padding-top: 25px;
+}
+
+.loading-indicator {
+	background-image: url("/images/loading.gif");
+	background-repeat: no-repeat;
+	background-position: center;
+	display: none;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

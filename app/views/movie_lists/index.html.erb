@@ -1,10 +1,36 @@
 
-<form class="form-inline">
-	<input type="text" placeholder="Search Movies..." class="form-control" id="movie_title" data-remote='true'>	
-	<span class="input-group-btn">
-	  <button class='btn btn-default' id="movie_search">
-	    <i class="fa fa-search"></i>
-	  </button>
-	</span>
-</form>
+<div class='header-bg'>
+	<center>
+		<br/>
+		<h1>Movie Jam!  Create & Share Movie Lists and Reviews!</h1>
+		<form class="form-inline input-group" style="width:40%">
+			<input type="text" placeholder="Create A Movie List..." class="form-control" id="movie_title" data-remote='true'>	
+			<span class="input-group-btn">
+			  <button class='btn btn-default' id="movie_search">
+			    <i class="fa fa-search"></i>
+			  </button>
+			</span>
+		</form>
+		<br/>
+		<p>or browse <a href='/reviews'>all our reviews</a></p>
 
+	</center>
+</div>
+
+<div class="grey-background">
+	<div class="container-fluid main-content">
+		<div class="box">
+		<h2>Take a Look at Other Movie Lists</h2>
+		<% @movie_lists.each_slice(4) do |movie_sublist| %>
+			<div class="row">
+				<% movie_sublist.each do |movie_list| %>
+					<div class="col-sm-3">
+						<img src="<%= movie_list.thumbnail %>" class="movie_img"><br/>
+						<span class="movie_title"><%= link_to movie_list.query, movie_list_path(movie_list) %></span>
+					</div>
+				<% end %>
+			</div><br/>
+		<% end %>
+		</div>
+	</div>
+</div>

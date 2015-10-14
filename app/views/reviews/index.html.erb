@@ -1,7 +1,22 @@
-Reviews
+<div class='header-bg movie-show'>
+	<h1>Reviews! Find the Hottest & Rarest Movies!</h2>
+</div>
 
-<% @reviews.each do |review| %>
-	<%= review.movie.title %>
-	<%= review.rating %>
-	<%= review.user_email %>
-<% end %>
+<div class='show-background'>
+	<div class="container-fluid main-content">
+		<div class='box review-index'>
+			<% @reviews.each do |review| %>
+				<div class='row review-row'>
+					<div class='col-md-3'>
+						<img src='<%= review.movie.thumbnail%>'>
+					</div>
+					<div class='col-md-9'>
+						<p>Movie Title: <%= link_to review.movie.title, movie_path(review.movie) %></p>
+						<p>Review: <%= review.comment %>
+						<p><%= review.rating %> Stars by: <%= review.user_email %></p>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

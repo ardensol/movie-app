@@ -3,8 +3,15 @@
 $(document).ready(function(){
 	$('#movie_search').click( function(event){
 
+		//disable button and prevent default rails rendering
+		$(this).prop("disabled", true);
+		$('#movie_title').addClass("loading-indicator");
+		$('#movie_title').prop("disabled", true);
+
+
 		event.preventDefault();
 
+		//search for movie title via Mashape API
 		searchVar = $('#movie_title').val();
 
 		$.ajax({
@@ -16,7 +23,9 @@ $(document).ready(function(){
 				saveMovies(data.results, searchVar);
 			},
 
-			error: function (msg) { console.log(msg);}
+			error: function (error) { 
+				errorHandling(error);
+			}
 		});
 	});
 
@@ -27,7 +36,18 @@ $(document).ready(function(){
 			type: 'POST',
 			url: '/api/movie_lists',
 			data: {movies: data, query: searchVar},
-			error: function (msg) { console.log(msg); }
-		})
+			error: function (error) { 
+				errorHandling(error);
+			}
+		});
+	};
+
+	//Repetitive error handling in case it exists out of initial API Call or subsequent Rails API Calls
+	function errorHandling(error) {
+		console.log(error);
+		alert(errorHandling.statusText); 
+		$(this).removeProp("disabled");
+		$('#movie_title').removeProp("disabled");
+		$('#movie_title').removeClass("loading-indicator");
 	};
 });

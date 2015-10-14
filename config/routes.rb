@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :movie_lists
+  resources :movie_lists, only: [:index, :show]
 
   resources :reviews, only: [:index]
 

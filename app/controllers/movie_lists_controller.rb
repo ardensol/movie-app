@@ -3,10 +3,11 @@ class MovieListsController < ApplicationController
 
 
 	def index
+		@movie_lists = MovieList.all
 	end
 
 	def show
-		@movies = @movie_list.movies
+		@movies = @movie_list.movies.order(params[:sort])
 	end
 
 
