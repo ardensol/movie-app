@@ -27,12 +27,13 @@ class Api::MovieListsController < ApplicationController
         movie.title = movie_hash['name']
         movie.release_date = movie_hash['rlsdate']
 
-        #initiate API Call for Thumbnail and Additional Information
-        movie.find_additional_info(movie_hash['name'])
         movie.save
 
         # add to movie list collection
         movie_list.movies << movie
+
+        #initiate Job for API Call for Thumbnail and Additional Information
+        MovieJob.perform_later(movie)
 
       end
     end
