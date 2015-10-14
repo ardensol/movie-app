@@ -1,11 +1,7 @@
 class ReviewsController < ApplicationController
-	before_action :set_review, only: [:show]
 
 	def index
 		@reviews = Review.all
-	end
-
-	def show 
 	end
 
 	def create
@@ -22,12 +18,8 @@ class ReviewsController < ApplicationController
 		
 	end
 
-
 	private
 
-	def set_review
-		@review = Review.find(params[:id])
-	end
 
 	def review_params
 		params.require(:review).permit(:user_email, :rating, :comment)
