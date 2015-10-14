@@ -26,6 +26,7 @@ class Api::MovieListsController < ApplicationController
         movie.url = movie_hash['url']
         movie.title = movie_hash['name']
         movie.release_date = movie_hash['rlsdate']
+        movie.genre = movie_hash['genre']
 
         movie.save
 
