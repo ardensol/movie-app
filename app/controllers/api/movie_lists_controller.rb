@@ -38,8 +38,6 @@ class Api::MovieListsController < ApplicationController
       end
     end
 
-    movie_list.thumbnail = movie_list.movies[0].thumbnail
-
     movie_list.save
 
     #redirect to movie lists path
