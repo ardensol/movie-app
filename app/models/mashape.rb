@@ -7,7 +7,7 @@ class Mashape < ApplicationController
 
 	def get_data(movie_title)
 		@headers['params'] = {title: movie_title}
-		logger.debug("#{@headers}")
+
 		RestClient::Request.execute(
 			method: :get,
 			url: 'https://metacritic-2.p.mashape.com/find/movie',

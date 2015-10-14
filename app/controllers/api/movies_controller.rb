@@ -11,7 +11,7 @@ class Api::MoviesController < ApplicationController
       movie_hash = movie_hash[1]
       
       unless Movie.find_by_title(movie_hash['name'])
-        #create new movie instance and save data if the movie does not yet exist
+        #create new movie instance and save data if the movie does not yet exist, avoiding duplication for application
         movie = Movie.new
         movie.title = movie_hash['name']
         movie.release_date = movie_hash['rlsdate']
