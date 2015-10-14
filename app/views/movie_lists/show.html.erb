@@ -18,7 +18,7 @@
 			<% @movies.each_slice(4) do |movie_sublist| %>
 				<div class='row'>
 					<% movie_sublist.each do |movie| %>
-						<div class="col-sm-3">
+						<div class="col-sm-3 hide-overflow">
 							<img src="<%= movie.thumbnail %>" class="movie_img"><br/>
 							<%= link_to movie.title, movie_path(movie) %>
 						</div>
